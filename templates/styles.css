@@ -1,0 +1,101 @@
+body {
+    margin : 0;
+    padding : 0;
+}
+
+.main {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.main .header {
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.main .title {
+    position: absolute;
+    top: 13px;
+    left: 50px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.main .upload_n_download {
+    height: 964px;
+    top: 50px;
+    background-color: #f2f4f6;
+    position: absolute;
+    width: 1920px;
+    left: 0;
+}
+
+.main .gray_rectangle {
+    width: 1651px;
+    height: 726px;
+    top: 120px;
+    left: 135px;
+    background-color: #d9d9d9;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.main .white_rectangle {
+    width: 1483px;
+    height: 601px;
+    top: 65px;
+    left: 85px;
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.main .select_upload_text {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.main #image_uploads {
+    position: absolute; 
+    top: 180px; 
+    left: 200px;
+}
+
+.main .select_download_text {
+    position: absolute;
+    top: 450px;
+    left: 200px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.main #label_downloads {
+    position: absolute; 
+    top: 480px; 
+    left: 200px;
+}
