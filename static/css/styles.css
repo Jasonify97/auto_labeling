@@ -62,8 +62,8 @@ body {
 
 .main .select_upload_text {
     position: absolute;
-    top: 150px;
-    left: 200px;
+    top: 100px;
+    left: 140px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
@@ -76,14 +76,14 @@ body {
 
 .main #image_uploads {
     position: absolute; 
-    top: 180px; 
-    left: 200px;
+    top: 130px; 
+    left: 140px;
 }
 
 .main .select_download_text {
     position: absolute;
-    top: 450px;
-    left: 200px;
+    top: 380px;
+    left: 140px;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
@@ -96,6 +96,14 @@ body {
 
 .main #label_downloads {
     position: absolute; 
-    top: 480px; 
-    left: 200px;
+    top: 410px; 
+    left: 140px;
+}
+
+.movetomain:hover {
+    width: 200px;
+    height: 150px;
+    transition: all 1s;
+    padding: 5px 10px;
+    font-size: 30px;
 }

@@ -3,8 +3,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Auto Labeling</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
         </div>
         <div class="upload_n_download">
             <div class="gray_rectangle">
-                <div class="white_rectangle"></div>
+                <div class="white_rectangle">
                     <div class="select_upload_text">Select Upload Folder</div>
                     <div>
                         <input id="image_uploads" type="file" name="image_uploads" accept=".jpg, .jpeg, .png" multiple required>
@@ -23,6 +24,10 @@
                     <div>
                         <input id="label_downloads" type="file" name="label_downloads" accept=".txt" multiple required>
                     </div>
+                    <a href="{% url 'main' %}">
+                        <button type="button" class="movetomain">Start</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
