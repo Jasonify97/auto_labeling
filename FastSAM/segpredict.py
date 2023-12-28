@@ -1,4 +1,4 @@
-from .fastsam import FastSAM, FastSAMPrompt
+from fastsam import FastSAM, FastSAMPrompt
 import torch, os
 
 
