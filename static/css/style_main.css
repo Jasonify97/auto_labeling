@@ -1,0 +1,11 @@
+body {
+    margin : 0;
+    padding : 0;
+}
+
+.main .header {
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 50px;
+    position: relative;
+}

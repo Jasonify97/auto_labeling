@@ -1,14 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{% static 'css/style_main.css' %}" />
+    <title>Auto Labeling</title>
 </head>
 <body>
-    <h1>Here is Main page!</h1>
-    <button>
-        <a href="{% url 'start' %}">move start page</a>
-    </button>
+    <div id="container" role="main">
+        <div class="header" role="banner">
+            <div class="title">Auto Labeling</div>
+        </div>
+    </div>
 </body>
 </html>
