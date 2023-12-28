@@ -1,7 +1,19 @@
-asgiref==3.7.2
-Django==4.2.8
-djangorestframework==3.14.0
-pytz==2023.3.post1
-sqlparse==0.4.4
-typing_extensions==4.9.0
-tzdata==2023.3
+# Base-----------------------------------
+matplotlib>=3.2.2
+opencv-python>=4.6.0
+Pillow>=7.1.2
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1
+torch>=1.7.0
+torchvision>=0.8.1
+tqdm>=4.64.0
+
+pandas>=1.1.4
+seaborn>=0.11.0
+
+gradio==3.35.2
+
+# Ultralytics-----------------------------------
+ultralytics == 8.0.120
+
