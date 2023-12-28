@@ -427,7 +427,7 @@ class FastSAMPrompt:
             if type(annotation) == dict:
                 mask = annotation['segmentation']
             else:
-                mask = annotation
+                mask = annotation   
             for i, point in enumerate(points):
                 if mask[point[1], point[0]] == 1 and pointlabel[i] == 1:
                     onemask[mask] = 1
