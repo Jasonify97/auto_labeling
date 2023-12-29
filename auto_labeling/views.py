@@ -14,6 +14,9 @@ def start(request):
     return render(request, 'start.html')
 
 def index(request):
-    
     return HttpResponse('Here is Index View!')
+
+# def upload_images(request):
+#     if request.method == 'POST':
+
 
