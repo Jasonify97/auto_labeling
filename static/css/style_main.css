@@ -3,9 +3,166 @@ body {
     padding : 0;
 }
 
-.main .header {
+.header {
     background-color: #d9d9d9;
-    width: 100%;
-    height: 50px;
-    position: relative;
+    width: 100vw;
+    height: 3vh;
+    position: absolute;
 }
+
+.title {
+    position: absolute;
+    margin: auto;
+    padding: 0.5rem;
+    left: 1rem;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.4em;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.left_side {
+    position: absolute;
+    width: 10rem;
+    height: 97%;
+    top: 3vh;
+    left: 0rem;
+    background-color: #cdcdcd;
+}
+
+.point_btn {
+    position: absolute; 
+    top: 4rem;
+    left: 2.5rem;
+    padding: 8px 8px;
+    font-size: 1.5em;
+}
+
+.box_btn {
+    position: absolute; 
+    top: 8rem;
+    left: 2.5rem;
+    padding: 8px 15px;
+    font-size: 1.5em;
+}
+
+.save_btn {
+    position: absolute; 
+    top: 80rem;
+    left: 2.2rem;
+    padding: 10px 14px;
+    font-size: 1.5em;
+}
+
+.reset_btn {
+    position: absolute; 
+    top: 85rem;
+    left: 2.1rem;
+    padding: 10px 13px;
+    font-size: 1.5em;
+}
+
+.image {
+    position: absolute; 
+    top: 3vh;
+    left: 10rem;
+    right: 30rem;
+    width: 80%;
+    height: 80%;
+}
+
+.image img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.image_slider {
+    position: absolute; 
+    top: 83%;
+    left: 10rem;
+    right: 30rem;
+    width: 80%;
+    height: 17%;
+    margin-top: auto;
+}
+
+/* .image_slider img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+} */
+
+.right_side {
+    position: absolute;
+    width: 30rem;
+    height: 97%;
+    top: 3vh;
+    right: 0;
+    background-color: #cdcdcd;
+}
+
+.set_parameter {
+    position: relative;
+    width: 20rem;
+    height: 18rem;
+    top: 3rem;
+    left: 5rem;
+    font-size: 2em;
+}
+
+.set_parameter #parameters {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-color: #ffffff;
+    font-size: 0.8em;
+}
+
+.label_list {
+    position: relative;
+    width: 20rem;
+    height: 18rem;
+    top: 12rem;
+    left: 5rem;
+    font-size: 2em;
+}
+
+.label_list #labels {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-color: #ffffff;
+    font-size: 0.8em;
+}
+
+.object_list {
+    position: relative;
+    width: 20rem;
+    height: 18rem;
+    top: 18rem;
+    left: 5rem;
+    font-size: 2em;
+}
+
+.object_list #objects {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-color: #ffffff;
+    font-size: 0.8em;
+}
+
+/* .test {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+} */

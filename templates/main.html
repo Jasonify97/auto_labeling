@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <link rel="stylesheet" href="{% static 'css/style_main.css' %}" />
     <title>Auto Labeling</title>
 </head>
@@ -11,6 +12,72 @@
     <div id="container" role="main">
         <div class="header" role="banner">
             <div class="title">Auto Labeling</div>
+        </div>
+        <div class="left_side">
+            <button class="point_btn">Point</button>
+            <button class="box_btn">Box</button>
+            <button class="save_btn">Save</button>
+            <button class="reset_btn">Reset</button>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/1.jpg' %} " alt="Error">
+        </div>
+        <div class="image_slider">
+            sdjflsjdf
+            <div class="inner">
+                <ul class="swiper-wrapper slide_list">
+                    <li class="swiper-slide">slider1</li>
+                    <li class="swiper-slide">slider2</li>
+                    <li class="swiper-slide">slider3</li>
+                    <li class="swiper-slide">slider4</li>
+                    <li class="swiper-slide">slider5</li>
+                </ul>
+            </div>
+            <span class="btn btn_prev">이전</span>
+            <span class="btn btn_next">다음</span>
+            <!-- <img src="{% static 'images/1.jpg' %} " alt="Error"> -->
+        </div>
+        
+        <div class="right_side">
+            <div class="set_parameter">
+                <label for="set_parameter">Set Parameters for FastSAM</label>
+                <select name="parameters" id="parameters" size="10" multiple>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="java">Java</option>
+                    <option value="golang">Golang</option>
+                    <option value="python">Python</option>
+                    <option value="c#">C#</option>
+                    <option value="C++">C++</option>
+                    <option value="erlang">Erlang</option>
+                </select>
+            </div>
+            <div class="label_list">
+                <label for="label_list">Label List</label>
+                <select name="labels" id="labels" size="10" multiple>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="java">Java</option>
+                    <option value="golang">Golang</option>
+                    <option value="python">Python</option>
+                    <option value="c#">C#</option>
+                    <option value="C++">C++</option>
+                    <option value="erlang">Erlang</option>
+                </select>
+            </div>
+            <div class="object_list">
+                <label for="object_list">Object List</label>
+                <select name="objects" id="objects" size="10" multiple>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="java">Java</option>
+                    <option value="golang">Golang</option>
+                    <option value="python">Python</option>
+                    <option value="c#">C#</option>
+                    <option value="C++">C++</option>
+                    <option value="erlang">Erlang</option>
+                </select>
+            </div>
         </div>
     </div>
 </body>
