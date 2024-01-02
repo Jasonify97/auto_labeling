@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="{% static 'css/start.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/start.css' %}"/>
     <title>Auto Labeling</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -15,32 +14,20 @@
         </div>
         <div class="upload_n_download">
             <div class="gray_rectangle">
-                <div class="white_rectangle">                    
-                    <form id="uploadForm" enctype="multipart/form-data">
-                        <label class="select_upload_text" for="folder">Select folder</label>
-                        <input type="file" id="folder" webkitdirectory multiple/>
-                    <form>    
-                    <!-- <div class="filebox">
-                        <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-                        <label for="file">파일찾기</label>
-                        <input type="file" id="file">
-                    </div>     -->
+                <div class="white_rectangle">
+                    <form method="post" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+                        {% csrf_token %}
+                        <div class = "submit">
+                            <label for="file">Select Upload Folder:</label>
+                            </br>
+                            <input type="file" name="file" multiple>
+                        </div>
+                        <button class="movetomain" type="submit">Start</button>
+                    </form>
 
-
-
-                    <!-- <div class="select_download_text">Select Download Folder</div>
-                    <div>
-                        <input id="label_downloads" type="file" name="label_downloads" accept=".txt" multiple required>
-                    </div>
-                    <a href="{% url 'main' %}">
-                        <button type="button" class="movetomain">Start</button>
-                    </a> -->
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-
-</script>
 </html>
