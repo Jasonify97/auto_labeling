@@ -92,21 +92,25 @@ body {
     left: 140px;
 }
 
-.movetomain {
+.submit {
     position: absolute; 
-    top: 410px;
-    left: 800px;
-    width: 200px;
-    height: 80px;
-    transition: all 1s;
-    padding: 5px 10px;
-    font-size: 30px;
+    top: 140px;
+    left: 400px;
 }
 
-.movetomain:hover {
-    width: 200px;
-    height: 150px;
-    transition: all 1s;
+.movetomain {
+    position: absolute; 
+    top: 150px;
+    left: 800px;
+    width: 100px;
+    height: 60px;
     padding: 5px 10px;
-    font-size: 30px;
+    font-size: 15px;
 }
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+

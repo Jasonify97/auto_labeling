@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="{% static 'css/start.css' %}"/>
     <title>Auto Labeling</title>
 </head>
 <body>
@@ -16,17 +15,16 @@
         <div class="upload_n_download">
             <div class="gray_rectangle">
                 <div class="white_rectangle">
-                    <div class="select_upload_text">Select Upload Folder</div>
-                    <div>
-                        <input id="image_uploads" type="file" name="image_uploads" accept=".jpg, .jpeg, .png" multiple required>
-                    </div>
-                    <div class="select_download_text">Select Download Folder</div>
-                    <div>
-                        <input id="label_downloads" type="file" name="label_downloads" accept=".txt" multiple required>
-                    </div>
-                    <a href="{% url 'main' %}">
-                        <button type="button" class="movetomain">Start</button>
-                    </a>
+                    <form method="post" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+                        {% csrf_token %}
+                        <div class = "submit">
+                            <label for="file">Select Upload Folder:</label>
+                            </br>
+                            <input type="file" name="file" multiple>
+                        </div>
+                        <button class="movetomain" type="submit">Start</button>
+                    </form>
+
                 </div>
             </div>
         </div>
