@@ -1,5 +1,4 @@
 {% load static %}
-{% load media %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,39 +9,28 @@
     <title>Auto Labeling</title>
 </head>
 <body>
+    <div class="header" role="banner">
+        <div class="title">Auto Labeling</div>
+    </div>
     <div id="container" role="main">
-        <div class="header" role="banner">
-            <div class="title">Auto Labeling</div>
-        </div>
         <div class="left_side">
-            <button class="point_btn">Point</button>
-            <button class="box_btn">Box</button>
-            <button class="save_btn">Save</button>
-            <button class="reset_btn">Reset</button>
+            <button class="top_btn">Point</button>
+            <button class="top_btn">Box</button>
+            <button class="bot_btn">Save</button>
+            <button class="top_btn">Reset</button>
         </div>
-        <div class="image">
-            <img src="{% media 'img/1.jpg' %} " alt="Error">
-        </div>
-        <div class="image_slider">
-            sdjflsjdf
-            <div class="inner">
-                <ul class="swiper-wrapper slide_list">
-                    <li class="swiper-slide">slider1</li>
-                    <li class="swiper-slide">slider2</li>
-                    <li class="swiper-slide">slider3</li>
-                    <li class="swiper-slide">slider4</li>
-                    <li class="swiper-slide">slider5</li>
-                </ul>
+
+        <div class="main">
+            <div class="image_display">
+                <img style="width: 100%; height:100%; " src="{% static 'images/1.jpg' %}" alt="hi">
             </div>
-            <span class="btn btn_prev">이전</span>
-            <span class="btn btn_next">다음</span>
-            <!-- <img src="{% static 'images/1.jpg' %} " alt="Error"> -->
         </div>
         
+        
         <div class="right_side">
-            <div class="set_parameter">
-                <label for="set_parameter">Set Parameters for FastSAM</label>
-                <select name="parameters" id="parameters" size="10" multiple>
+            <div class="right_side_component">
+                <label for="right_side_component">Set Parameters for FastSAM</label>
+                <select name="parameters" class="select" id="parameters" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
                     <option value="java">Java</option>
@@ -53,9 +41,9 @@
                     <option value="erlang">Erlang</option>
                 </select>
             </div>
-            <div class="label_list">
-                <label for="label_list">Label List</label>
-                <select name="labels" id="labels" size="10" multiple>
+            <div class="right_side_component">
+                <label for="right_side_component">Label List</label>
+                <select name="labels" class="select" id="labels" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
                     <option value="java">Java</option>
@@ -66,9 +54,9 @@
                     <option value="erlang">Erlang</option>
                 </select>
             </div>
-            <div class="object_list">
-                <label for="object_list">Object List</label>
-                <select name="objects" id="objects" size="10" multiple>
+            <div class="right_side_component">
+                <label for="right_side_component">Object List</label>
+                <select name="objects" class="select" id="objects" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
                     <option value="java">Java</option>
