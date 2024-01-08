@@ -1,8 +1,6 @@
 from fastsam import FastSAM, FastSAMPrompt
 import torch, os
 
-
-
 model_path = os.path.join("FastSAM", "weights", "FastSAM-x.pt")
 model = FastSAM(model_path)
 # IMAGE_PATH = os.path.join("FastSAM","1.jpg")///

@@ -9,4 +9,3 @@ urlpatterns = [
     path('main/', views.upload_file, name='upload_file'),
     # path('create_folder/', views.Create_Folder, name="create_folder"),
 ]
-
