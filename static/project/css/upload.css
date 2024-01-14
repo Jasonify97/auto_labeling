@@ -3,7 +3,9 @@ body {
     margin: 0;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
 }
+/* header */
 header {
     background-color: #F6F4FE; 
     display: flex;
@@ -50,5 +52,190 @@ header {
 .header_right_content > button{
     width: 50px;
     height: 30px;
-    
+
 }
+.header_right_content > button > span{
+    font-size: 12px;
+    color: #9F9F9F;
+}
+
+/* container */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+
+
+
+/* leftbar */
+/* username, img, projectname padding-left:20px */
+.leftbar { 
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_name {
+    font-size: 14px;
+    color: #747474;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 6px;
+}
+
+.project_first_img {
+    display: flex;
+    justify-content: center;
+}
+
+.first_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+}
+
+.leftbar > .project_intro {
+    display: flex;
+    flex-direction: row;
+}
+
+.project_intro {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.project_intro_name {
+    font-size: 18px;
+    font-weight: 800;
+}
+.project_intro_modify {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.project_move_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.move_page_btn_current_page{
+    margin-top: 4vh;
+    width: 130px;
+    height: 30px;
+
+    background-color: white;
+    border: 2px solid #8315F9;
+    border-radius: 10px;
+
+    color: #8315F9;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.move_page_btn_current_page:hover {
+    transition:all .3s;
+    background-color: #8315F9;
+    color: white;
+    cursor: pointer;
+}
+
+.move_page_btn_current_page:active {
+    background-color: #965ED3;
+    color: white;
+    border: 2px solid #965ED3;
+    cursor: pointer;
+}
+
+.move_page_btn_other_page {
+    margin-top: 4vh;
+    width: 130px;
+    height: 30px;
+    background-color: white;
+    border-style: none;
+    border-radius: 10px;
+
+    color: #747474;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.move_page_btn_other_page:hover {
+    transition: all .3s;
+    color: #8315F9;
+    border: 2px solid #8315F9;
+    border-radius: 10px;
+    background-color: #8315F9;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* main */
+.main {
+    width: calc(100vw - 100px);
+    background-color: #F3F4F6;
+}
+.main > p {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 8vw;
+    margin-top: 8vh;
+    margin-bottom: 10px;
+}
+
+.file_upload {
+    height: 65vh;
+    border: 2px dashed #8315F9 ;
+    border-radius: 10px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file_upload > img {
+    width: 80px;
+    height: 80px;
+}
+
+.file_upload > p {
+    margin-top: 0px;
+    font-size: 25px;
+    color: #8315F9;
+}
+
+#select_btn_left {
+    margin-right: 30px;
+}
+
+.select_btn {
+    width: 90px;
+    height: 30px;
+    border: 1.2px solid #767676;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #767676;
+    margin-top: 0px;
+
+    transition: all .3s ease;
+}
+
+.select_btn:hover {
+    width: 100px;
+    height: 40px;
+    background-color: #767676;
+    color: white;
+    cursor: pointer;
+}
+
