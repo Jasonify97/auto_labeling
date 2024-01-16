@@ -135,10 +135,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: left;
+    transition:all .3s ease;
 }
 
 .move_page_btn_current_page:hover {
-    transition:all .3s;
     background-color: #8315F9;
     color: white;
     cursor: pointer;
@@ -164,11 +164,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: left;
+    transition:all .3s ease;
 }
 
 .move_page_btn_other_page:hover {
-    transition: all .3s;
-    color: #8315F9;
     border: 2px solid #8315F9;
     border-radius: 10px;
     background-color: #8315F9;
@@ -197,6 +196,7 @@ header {
     border-radius: 10px;
     margin-left: 8vw;
     margin-right: 8vw;
+    background-color: white;
 
     display: flex;
     flex-direction: column;
