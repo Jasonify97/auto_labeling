@@ -183,7 +183,7 @@ header {
     background-color: #F3F4F6;
 }
 
-.file_upload {
+.create_classes {
     height: 65vh;
     border: 2px dashed #8315F9 ;
     border-radius: 10px;
@@ -194,42 +194,53 @@ header {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.file_upload > img {
-    width: 80px;
-    height: 80px;
+.text1 {
+    margin-top: 50px;
+    margin-left: 40px;
+    color: black;
+    font-size: 22px;
+    font-weight: 800;
 }
 
-.file_upload > p {
-    margin-top: 0px;
-    font-size: 25px;
-    color: #8315F9;
+.text2 {
+    margin-left: 40px;
+    margin-top: 0;
+    color: #747474;
 }
 
-#select_btn_left {
-    margin-right: 30px;
+.create_classes > form {
+    display: flex;
+    flex-direction: column;
 }
 
-.select_btn {
-    width: 90px;
+#input_classes {
+    margin-left: 40px;
+
+    width: 40vw;
     height: 30px;
-    border: 1.2px solid #767676;
-    border-radius: 10px;
-    font-size: 11px;
-    color: #767676;
-    margin-top: 0px;
 
-    transition: all .3s ease;
+    border: 1px solid #747474;
+    border-radius: 5px;
 }
 
-.select_btn:hover {
-    width: 100px;
-    height: 40px;
-    background-color: #767676;
+#input_classes_btn {
+    margin-top: 20px;
+    margin-left: 40px;
+
+    width: 120px;
+    height: 30px;
+
     color: white;
-    cursor: pointer;
+    background-color: #8519F9;
+
+    border: none;
+    border-radius: 8px;
 }
 
+#input_classes_btn:hover {
+    background-color: #965ED3;
+    cursor: pointer;
+
+}
