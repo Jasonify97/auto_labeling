@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'project/css/classes.css' %}" />
+    <link rel="stylesheet" href="{% static 'project/css/create_classes.css' %}" />
 </head>
 <body>
     <header>
@@ -57,17 +57,14 @@
             </div>
         </div>
         <div class="main">
-            <p>
-                Classes
-            </p>
             <div class="create_classes">
-                <p>Add a comma separated list of class names</p>
-                <form action="/create_class" method="post">
+                <p class="text1">Classes</p>
+                <p class="text2">Add a comma separated list of class names</p>
+                <form action="{% url 'create_classes' %}" method="post">
+                    {% csrf_token %}
                     <input type="text" id="input_classes" name="input_classes" placeholder="Cat, Dog, ‧‧‧"  required>
                     <input id="input_classes_btn" type="submit" value="Add Classes">
                 </form>
-
-                
             </div>
         </div>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'project/css/upload.css' %}" />
+    <link rel="stylesheet" href="{% static 'project/css/show_classes.css' %}" />
 </head>
 <body>
     <header>
@@ -42,37 +42,52 @@
                 </div>
             </div>
             <div class="project_move_page">
-                    <button class="move_page_btn_current_page" type="button" onclick="location.href=''">
+                    <button class="move_page_btn_other_page" type="button" onclick=" location.href='http://127.0.0.1:8000/project/upload/' ">
                         Upload
                     </button>
-                    <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/create_classes/'">
+                    <button class="move_page_btn_current_page" type="button" onclick="location.href=''">
                         Classes
                     </button>
                     <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/annotate/'">
-                        Annotate
+                        Annotate 
                     </button>
                     <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/generate/'">
-                        Generate
+                        Upload
                     </button>
             </div>
         </div>
         <div class="main">
-            <div class="file_upload">
-                <img src="{% static 'project/img/upload.png' %}" alt="">
-                <p>Drag and Drop images and annotationsto Upload them.</p>
-                <p style="color: black;">or</p>
-                <div class="upload_file_btn">
-                    <button class="select_btn" id="select_btn_left"  type="button" onclick="">
-                        Select Files
-                    </button>
-                    <button class="select_btn" type="button" onclick="">
-                        Select Folder
-                    </button>
+            <div class="show_classes">
+                <div class="top_contents">
+                    <p>Classes</p>
+                    <div class="btns">
+                        <button class="add_btn">Add Classes</button>
+                        <button class="modify_btn">Modify Classes</button>
+                    </div>
                 </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Class Name</th>
+                        </tr>
+                    </thead> 
+                    
+                    <tbody>
+                       
+                        {% for classes_instance in classes_lists %}
+                            <tr>
+                                <th>{{ classes_instance.id }}</th>
+                                <th>{{ classes_instance.classes }}</th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                </table> 
+                
+
             </div>
         </div>
-
     </div>
-    
 </body>
 </html>
