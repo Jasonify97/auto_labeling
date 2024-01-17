@@ -1,8 +1,6 @@
 from fastsam import FastSAM, FastSAMPrompt
 import torch, os
 
-
-
 model_path = os.path.join("FastSAM", "weights", "FastSAM-x.pt")
 model = FastSAM(model_path)
 # IMAGE_PATH = os.path.join("FastSAM","1.jpg")///
@@ -39,9 +37,9 @@ print(everything_results[0].masks)
 # # text prompt
 # ann = prompt_process.text_prompt(text='a photo of a dog')
 
-# # point prompt xy좌표
-# # points default [[0,0]] [[x1,y1],[x2,y2]]
-# # point_label default [0] [1,0] 0:background, 1:foreground
+# point prompt xy좌표
+# points default [[0,0]] [[x1,y1],[x2,y2]]
+# point_label default [0] [1,0] 0:background, 1:foreground
 # ann = prompt_process.point_prompt(points=[[620, 360]], pointlabel=[1])
 
 # prompt_process.plot(

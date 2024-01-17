@@ -1,7 +1,8 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -21,15 +22,13 @@
         </div>
 
         <div class="main">
-            <div class="image_display">
-                <img style="width: 100%; height:100%; " src="{% static 'images/1.jpg' %}" alt="hi">
-            </div>
+                <img id="img" src="{% static 'images/3.jpg' %}" alt="hi">
         </div>
         
-        
         <div class="right_side">
+            <div id="output">output : </div>
             <div class="right_side_component">
-                <label for="right_side_component">Set Parameters for FastSAM</label>
+                <label for="right_side_component" class="right_side_component_name">Set Parameters for FastSAM</label>
                 <select name="parameters" class="select" id="parameters" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
@@ -42,7 +41,7 @@
                 </select>
             </div>
             <div class="right_side_component">
-                <label for="right_side_component">Label List</label>
+                <label for="right_side_component" class="right_side_component_name">Label List</label>
                 <select name="labels" class="select" id="labels" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
@@ -55,7 +54,7 @@
                 </select>
             </div>
             <div class="right_side_component">
-                <label for="right_side_component">Object List</label>
+                <label for="right_side_component" class="right_side_component_name">Object List</label>
                 <select name="objects" class="select" id="objects" size="10" multiple>
                     <option value="javascript">JavaScript</option>
                     <option value="php">PHP</option>
@@ -69,5 +68,38 @@
             </div>
         </div>
     </div>
+
+<script>
+    var output = document.getElementById('output');
+    var imgElement = document.getElementById('img');
+
+    document.addEventListener("mousemove", logKey);
+    document.addEventListener("click", logAndSubmit);
+
+    function logKey(e) {
+        e.stopPropagation();
+        output.innerHTML = `X/Y: ${e.clientX}, ${e.clientY}`;
+    }
+
+    function logAndSubmit(e) {
+        let formData = new FormData();
+        formData.append('clickX', e.clientX);
+        formData.append('clickY', e.clientY);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+        fetch('Post_xy_point/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
+</script>
 </body>
 </html>

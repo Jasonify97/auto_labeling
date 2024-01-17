@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project/css/upload.css' %}" />
+</head>
+<body>
+    <header>
+        <div class="header_left_content">
+            <a href="http://127.0.0.1:8000/project/upload/">
+                <img src="{% static 'project/img/icon.png' %}" alt="">
+            </a>
+            <a class="page_name" href="http://127.0.0.1:8000/project/upload/">Autolabel</a>
+        </div> 
+        <div class="header_center">
+                <a class="header_center_content" href="/">project</a>
+                <a class="header_center_content" href="/"><p>Documentation</p></a>
+        </div>
+        <div class="header_right_content">
+            <button>
+                <span>mysite</span>
+            </button>                        
+        </div>
+    </header>
+    <div class="container">
+        <div class="leftbar">
+            <div class="user_name">
+                user_name
+            </div>
+            <div class = "project_first_img">
+                <img class="first_img" src="{% static 'project/img/1.jpg' %}" alt="">
+            </div>
+            <div class="project_intro">
+                <div class="project_intro_name">
+                    hi
+                </div>
+                <div class="project_intro_modify">
+                    :
+                </div>
+            </div>
+            <div class="project_move_page">
+                    <button class="move_page_btn_current_page" type="button" onclick="location.href=''">
+                        Upload
+                    </button>
+                    <button class="move_page_btn_other_page" type="button" onclick="location.href=''">
+                        Classes
+                    </button>
+                    <button class="move_page_btn_other_page" type="button" onclick="location.href=''">
+                        Annotate
+                    </button>
+                    <button class="move_page_btn_other_page" type="button" onclick="location.href=''">
+                        Upload
+                    </button>
+            </div>
+        </div>
+        <div class="main">
+            <p>
+                Upload
+            </p>
+            <div class="file_upload">
+                <img src="{% static 'project/img/upload.png' %}" alt="">
+                <p>Drag and Drop images and annotationsto Upload them.</p>
+                <p style="color: black;">or</p>
+                <div class="upload_file_btn">
+                    <button class="select_btn" id="select_btn_left"  type="button" onclick="">
+                        Select Files
+                    </button>
+                    <button class="select_btn" type="button" onclick="">
+                        Select Folder
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
