@@ -6,4 +6,7 @@ urlpatterns = [
     path("annotate/", views.annotate),
     path("classes/", views.classes),
     path("generate/", views.generate),
+
+    path("create_class/", views.create_class),
+
 ]

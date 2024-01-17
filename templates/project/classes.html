@@ -42,10 +42,10 @@
                 </div>
             </div>
             <div class="project_move_page">
-                    <button class="move_page_btn_current_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/upload/'">
+                    <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/upload/'">
                         Upload
                     </button>
-                    <button class="move_page_btn_other_page" type="button" onclick="location.href=''">
+                    <button class="move_page_btn_current_page" type="button" onclick="location.href=''">
                         Classes
                     </button>
                     <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/annotate/'">
@@ -58,20 +58,16 @@
         </div>
         <div class="main">
             <p>
-                Upload
+                Classes
             </p>
-            <div class="file_upload">
-                <img src="{% static 'project/img/upload.png' %}" alt="">
-                <p>Drag and Drop images and annotationsto Upload them.</p>
-                <p style="color: black;">or</p>
-                <div class="upload_file_btn">
-                    <button class="select_btn" id="select_btn_left"  type="button" onclick="">
-                        Select Files
-                    </button>
-                    <button class="select_btn" type="button" onclick="">
-                        Select Folder
-                    </button>
-                </div>
+            <div class="create_classes">
+                <p>Add a comma separated list of class names</p>
+                <form action="/create_class" method="post">
+                    <input type="text" id="input_classes" name="input_classes" placeholder="Cat, Dog, ‧‧‧"  required>
+                    <input id="input_classes_btn" type="submit" value="Add Classes">
+                </form>
+
+                
             </div>
         </div>
 
