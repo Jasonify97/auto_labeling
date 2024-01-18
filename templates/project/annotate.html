@@ -92,7 +92,7 @@
             // 이미지 요소에 첫 번째 이미지를 설정합니다.
             document.getElementById("img").src = firstImagePath;
             formData.append('currentimagepath', imageList[0]);
-            fetch('work/', {
+            fetch('', {
                 method: 'POST',
                 headers: {'X-CSRFToken': csrftoken},
                 mode: 'same-origin',
@@ -104,7 +104,7 @@
             index = (index + direction + imageList.length) % imageList.length;  // 이미지 인덱스 변경
             document.getElementById("img").src = imageList[index];  // 이미지 변경
             formData.append('currentimagepath', imageList[index]);
-            fetch('work/', {
+            fetch('', {
                 method: 'POST',
                 headers: {'X-CSRFToken': csrftoken},
                 mode: 'same-origin',
@@ -145,8 +145,6 @@
             points_dict['points_list'] = points_list
             points_dict['points_label'] = points_label
             formData.append('points_dict', JSON.stringify(points_dict))
-            // formData.append('clickX', originalX);
-            // formData.append('clickY', originalY);
             formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
 
             fetch('work/', {
@@ -154,10 +152,10 @@
                 body: formData
             })
             .then(data => {
-                console.log('Success:', data);
+                // console.log('Success:', data);
                 try {
-                    // var output_imageList = '{{ output_images }}'
-                    var output_imageList = JSON.parse('{{ output_images|safe }}');
+                    var output_imageList = JSON.parse('{{ output_images|safe }}')
+                    // var output_imageList =data.output_images;
                     console.log(output_imageList)
                     document.getElementById("img").src = output_imageList[0];
                 } catch (e) {
