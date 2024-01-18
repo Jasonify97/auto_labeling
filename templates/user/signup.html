@@ -6,7 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> here is sign_up_page!</h1> <br><br><br><br><br><br>
+    <div class="container">
+        <h1>회원가입</h1>
+        <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+          ID : 
+          <input name="username" type="text" value="">
+          <br>
+          <br>
+          PW : 
+          <input name="password1" type="password" value="">
+          <br>
+          <br>
+          PW again! :
+          <input name="password2" type="password" value="">
+          <br>
+          <br>
+          Create your workspace name!:
+          <input name="project_name" type="text" value="">
+          <br>
+          <br>
+
+          <input class="b" type="submit" value="회원가입">
+        </form>
+      </div>
+
+
     <h3> move to main_page</h3> 
     <button type="button" onclick="location.href='http://127.0.0.1:8000/user' ">
         Upload

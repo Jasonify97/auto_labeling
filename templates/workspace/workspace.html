@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'workspace/css/workspace.css' %}" />
+</head>
+<body>
+    <header>
+        <div class="header_left_content">
+            <a href="http://127.0.0.1:8000/project/upload/">
+                <img src="{% static 'project/img/icon.png' %}" alt="">
+            </a>
+            <a class="page_name" href="http://127.0.0.1:8000/user/main/">Autolabel</a>
+        </div> 
+        <div class="header_center">
+                <a class="header_center_content" href="/">project</a>
+                <a class="header_center_content" href="/"><p>Documentation</p></a>
+        </div>
+        <div class="header_right_content">
+            <button>
+                <span>mysite</span>
+            </button>                        
+        </div>
+    </header>
+    <div class="main_header">
+        <div class="workspace_name_wrap">
+            <p class="workspace_name">{{ user.first_name }}`s Projects</p>
+        </div>
+        <div>
+            <form method="POST" action="{% url 'create_project' %}">
+                {% csrf_token %}
+                <input class="create_project_btn" type="submit" value="+&nbsp;&nbsp;&nbsp;Create Project">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal">
+            <div class="modal_body">
+                <h2>Create New Project</h2>
+                <form action=""></form>
+            </div>
+    </div>
+</body>
+</html>
