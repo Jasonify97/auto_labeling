@@ -87,6 +87,7 @@ header {
     border: 1px solid #8315F9;
     border-radius: 5px;
     color: white;
+    font-size: 14px;
     font-weight: 600;
     height: 40px;
     margin-right: 30px;
@@ -139,13 +140,14 @@ header {
     width:100%;
     height:100%;
     background-color: rgba(0,0,0,0.4);
+    display: none;
 
 }
 .modal_body{
     position:absolute;
     top:50%; 
     width:40vw;
-    height:60vh;
+    height:40vh;
     align-items: center;
     padding:40px;  
 
@@ -153,4 +155,50 @@ header {
     border-radius:10px;
     box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
     transform:translateY(-50%);
+}
+
+
+.modal_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal_form > label {
+    font-size: 20px;
+    color: #9F9F9F;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.assign_project {
+    height: 3vh;
+    border: 1px solid #9F9F9F;
+    margin-bottom: 50px;
+}
+
+.modal_cancel_or_next {
+    display: flex;
+    align-items: center;
+}
+
+.modal_cancel_or_next > button {
+    border: none;
+    background-color: white;
+    color: #9F9F9F;
+    font-size: 15px;
+}
+
+.modal_cancel_or_next > button:hover {
+    cursor: pointer;
+}
+
+.create_project_btn_form {
+    margin-left: auto;
+    background-color: #8315F9;
+    width: 140px;
+    height: 30px;
+    border: 1px solid #8315F9;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    height: 40px;
 }

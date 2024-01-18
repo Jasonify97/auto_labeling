@@ -14,4 +14,4 @@ def create_project(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-    return
+    return render(request, 'workspace/workspace.html')

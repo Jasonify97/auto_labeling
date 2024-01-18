@@ -27,13 +27,10 @@
     </header>
     <div class="main_header">
         <div class="workspace_name_wrap">
-            <p class="workspace_name">{{ user.first_name }}`s Projects</p>
+            <p class="workspace_name">{{ user.username }}`s Projects</p>
         </div>
         <div>
-            <form method="POST" action="{% url 'create_project' %}">
-                {% csrf_token %}
-                <input class="create_project_btn" type="submit" value="+&nbsp;&nbsp;&nbsp;Create Project">
-            </form>
+            <button class="create_project_btn">+&nbsp;&nbsp;&nbsp;create project</button>
         </div>
     </div>
 
@@ -41,8 +38,20 @@
     <div class="modal">
             <div class="modal_body">
                 <h2>Create New Project</h2>
-                <form action=""></form>
+                <form class="modal_form" method="POST" action="{% url 'create_project' %}">
+                    {% csrf_token %}
+                    <label for="assign_project">Project Name</label>
+                    <input class="assign_project" name="assign_project" type="text" placeholder="Input Project Name">
+                    <div class="modal_cancel_or_next">
+                        <button>cancel</button>
+                        <input class="create_project_btn_form" type="submit" value="+&nbsp;&nbsp;&nbsp;Create Project">
+                    </div>
+                </form>
             </div>
     </div>
 </body>
+
+<script>
+    
+</script>
 </html>
