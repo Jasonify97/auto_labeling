@@ -52,7 +52,7 @@
                         Annotate 
                     </button>
                     <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/generate/'">
-                        Upload
+                        Generate
                     </button>
             </div>
         </div>
@@ -65,26 +65,22 @@
                         <button class="modify_btn">Modify Classes</button>
                     </div>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Class Name</th>
-                        </tr>
-                    </thead> 
-                    
-                    <tbody>
-                       
-                        {% for classes_instance in classes_lists %}
+                <div class="table">
+                    <table>
+                        <thead>
                             <tr>
-                                <th>{{ classes_instance.id }}</th>
-                                <th>{{ classes_instance.classes }}</th>
+                                <th class="table_column">Class Name</th>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                    
-                </table> 
-                
+                        </thead> 
+                        <tbody>
+                            {% for classes_instance in classes_lists %}
+                                <tr>
+                                    <th class="table_row">{{ classes_instance.classes }}</th>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table> 
+                </div>
 
             </div>
         </div>
