@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Upload(models.Model):
+    imgfile = models.ImageField(upload_to='img/', blank=True, null=True)
+
+class Output_Img(models.Model):
+    output_imgfile = models.ImageField(upload_to='output/', blank=True, null=True)

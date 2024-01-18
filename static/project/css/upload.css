@@ -239,3 +239,13 @@ header {
     cursor: pointer;
 }
 
+.movetomain {
+    width: 90px;
+    height: 30px;
+    border: 1.2px solid #767676;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #767676;
+    margin-top: 0px;
+
+}

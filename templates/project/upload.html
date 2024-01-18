@@ -64,13 +64,15 @@
                 <img src="{% static 'project/img/upload.png' %}" alt="">
                 <p>Drag and Drop images and annotationsto Upload them.</p>
                 <p style="color: black;">or</p>
+                </br></br>
                 <div class="upload_file_btn">
-                    <button class="select_btn" id="select_btn_left"  type="button" onclick="">
-                        Select Files
-                    </button>
-                    <button class="select_btn" type="button" onclick="">
-                        Select Folder
-                    </button>
+                    <form action="{% url 'project:upload' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="imgfile" multiple>
+                        <form action="{% url 'project:annotate' %}" method="post" enctype="multipart/form-data">
+                            <button class="movetomain" type="submit">Start</button>
+                        </form>
+                    </form>
                 </div>
             </div>
         </div>
