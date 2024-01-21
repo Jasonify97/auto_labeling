@@ -8,6 +8,8 @@ urlpatterns = [
     path('main/', views.main),
     path('upload/', views.upload_file, name='upload_file'),
     path('main/Post_xy_point/', views.Post_xy_point), 
+
+    # app urls
     path("user/", include("user.urls")),
     path("workspace/", include("workspace.urls")),
     path("project/", include("project.urls")),

@@ -98,10 +98,33 @@ header {
     background-color: #965ED3;    
 }
 
+.main_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
 
+.project_instance_box {
+    width: 40vw;
+    height: 17vh;
+    border: 2px solid #9F9F9F;
+    border-radius: 12px;
+    margin-bottom: 5vh;
+}
 
+.db_project_name {
+    color: black;
+    font-weight: 600;
+}
 
-
+.db_project_create_time {
+    color: #9F9F9F;
+    font-size: 14px;
+    font-weight: 400;
+}
 
 
 
@@ -131,7 +154,7 @@ header {
 
 
 /* modal창! */
-.modal {
+#modal {
     position:absolute;
     display: flex;
     justify-content: center;
@@ -156,7 +179,6 @@ header {
     box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
     transform:translateY(-50%);
 }
-
 
 .modal_form {
     display: flex;

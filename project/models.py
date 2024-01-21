@@ -1,11 +1,9 @@
 from django.db import models
+from workspace.models import UserProfile
 
-# Create your models here.
 class Classes(models.Model):
-    classes = models.CharField(max_length=100)
-    id = models.AutoField(primary_key=True)
-                          
+    project_name = models.ForeignKey(UserProfile, on_delete = models.CASCADE)
+    classes_count = models.AutoField(primary_key=True)
+    classes_instance = models.CharField(max_length=100)
 
-    def set_classes(self, classes):
-        self.classes = classes
 

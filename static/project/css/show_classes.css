@@ -175,8 +175,6 @@ header {
     cursor: pointer;
 }
 
-
-
 /* main */
 .main {
     width: calc(100vw - 100px);

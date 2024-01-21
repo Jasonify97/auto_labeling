@@ -27,15 +27,33 @@
     </header>
     <div class="main_header">
         <div class="workspace_name_wrap">
-            <p class="workspace_name">{{ user.username }}`s Projects</p>
+            <p class="workspace_name">{{ user.first_name }}`s Projects</p>
         </div>
         <div>
-            <button class="create_project_btn">+&nbsp;&nbsp;&nbsp;create project</button>
+            <button class="create_project_btn" id="createProjectBtn" onclick="openModal()">+&nbsp;&nbsp;&nbsp;create project</button>
         </div>
+    </div>
+    <div class="main_container">
+        {% for project_instance in project_instances %}
+            <a href="http://127.0.0.1:8000/project/upload">
+            <div class="project_instance_box">
+                <p class="db_project_name">{{ project_instance.project_name }}</p>
+                <p class="db_project_create_time">{{ project_instance.project_create_time }}</p>
+            </div>
+            </a>
+        {% endfor %}
     </div>
 
 
-    <div class="modal">
+
+
+
+
+
+
+
+
+    <div id="modal">
             <div class="modal_body">
                 <h2>Create New Project</h2>
                 <form class="modal_form" method="POST" action="{% url 'create_project' %}">
@@ -43,7 +61,7 @@
                     <label for="assign_project">Project Name</label>
                     <input class="assign_project" name="assign_project" type="text" placeholder="Input Project Name">
                     <div class="modal_cancel_or_next">
-                        <button>cancel</button>
+                        <button onclick="closeModal()">cancel</button>
                         <input class="create_project_btn_form" type="submit" value="+&nbsp;&nbsp;&nbsp;Create Project">
                     </div>
                 </form>
@@ -52,6 +70,14 @@
 </body>
 
 <script>
-    
+    function openModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+    }
 </script>
 </html>

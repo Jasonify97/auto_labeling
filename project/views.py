@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Classes
+from .models import *
 
 def upload(request):
     
@@ -26,8 +25,7 @@ def create_classes(request):
         input_classes = input_classes.replace(" ","").split(',')
 
         for name in input_classes:
-            class_instance = Classes(classes=name)
-            class_instance.save()
+            class_instance, created = Classes.objects.get_or_create(classes_instance=name)
         
         return redirect('show_classes')
     return render(request, 'project/create_classes.html')
