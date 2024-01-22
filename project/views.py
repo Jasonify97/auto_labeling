@@ -3,11 +3,14 @@ import json
 import torch
 
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .models import Upload, Output_Img
 from django.core.files.base import ContentFile
 from django.shortcuts import get_object_or_404
 
 from FastSAM.fastsam import FastSAM, FastSAMPrompt
+
+from .tests import Annotate
 
 
 DIR_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,17 +30,37 @@ def upload(request):
 def annotate_main(request):
     if request.method == "GET":
         images = []
-        output_images = []
         img_names = os.listdir(image_dir)
-        output_img_names = os.listdir(output_image_dir)
-        for ori, out in zip(img_names, output_img_names):
+        for ori in img_names:
             images.append(f'/media/img/{ori}')
-            output_images.append(f'/media/output/{out}')
         images = json.dumps(images)
-        # for i in output_img_names:
-        #     output_images.append(f'/media/output/{i}')
-        output_images = json.dumps(output_images)
-        return render(request, 'project/annotate.html', {'images': images, 'output_images': output_images}) 
+        return render(request, 'project/annotate.html', {'images': images})
+    if request.method == "POST":
+        images = []
+        img_names = os.listdir(image_dir)
+        for ori in img_names:
+            images.append(f'/media/img/{ori}')
+        images = json.dumps(images)
+        an = Annotate()
+        output_images = an.annotate(request=request, Output_Img=Output_Img)
+        # return redirect('http://127.0.0.1:8000/project/annotate/')
+        return JsonResponse({'images': images, 'output_images': output_images})
+
+# def annotate_main(request):
+#     if request.method == "GET":
+#         images = []
+#         output_images = []
+#         img_names = os.listdir(image_dir)
+#         output_img_names = os.listdir(output_image_dir)
+#         for ori, out in zip(img_names, output_img_names):
+#             images.append(f'/media/img/{ori}')
+#             output_images.append(f'/media/output/{out}')
+#         images = json.dumps(images)
+#         print(images)
+#         # for i in output_img_names:
+#         #     output_images.append(f'/media/output/{i}')
+#         output_images = json.dumps(output_images)
+#         return render(request, 'project/annotate.html', {'images': images, 'output_images': output_images})
 
 def annotate(request):
     if request.method == 'POST':
@@ -75,13 +98,18 @@ def annotate(request):
             better_quality=True,
             retina=False,
             withContours=True,
-        )   
+        )
+        output_images = []   
         output_img_names = os.listdir(output_image_dir)
         for i in output_img_names:
             upload = Output_Img()
             upload.output_imgfile = i
             upload.save()
-        return render(request, "project/annotate.html")
+            output_images.append(f'/media/output/{i}')
+        # output_images = json.dumps(output_images)
+        # return redirect('http://127.0.0.1:8000/project/annotate/work/')
+        # return JsonResponse({'output_images': output_images})
+        return render(request, "project/annotate.html", {'output_images': output_images})
     
 def classes(request):
     
