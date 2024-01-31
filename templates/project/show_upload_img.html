@@ -58,8 +58,11 @@
         </div>
         <div class="main">
             <div class="show_upload_img">
-
-
+                <div class="table">
+                    {% for img in img_lists %}
+                        <img src="..{{ img.image.url }}">
+                    {% endfor %}
+                </div> 
             </div>
         </div>
     </div>

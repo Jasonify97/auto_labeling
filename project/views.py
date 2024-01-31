@@ -47,5 +47,9 @@ def upload_img(request):
             upload = UploadImg(image = img, project_name = user_profile )
             upload.save()
 
-        return redirect("http://127.0.0.1:8000/project/show_upload/")
+        return redirect("http://127.0.0.1:8000/project/show_upload_img/")
     return render(request, "project/upload.html")
+
+def show_upload_img(request):
+    img_lists = UploadImg.objects.all()
+    return render(request, 'project/show_upload_img.html', {'img_lists': img_lists})

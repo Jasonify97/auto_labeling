@@ -1,12 +1,15 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
 
     path("upload/", views.upload),
     path("upload_img/", views.upload_img, name="upload_img"),
+    path("show_upload_img/", views.show_upload_img, name="show_upload_img"),
     
     path("annotate/", views.annotate),
 
@@ -18,4 +21,4 @@ urlpatterns = [
 
     
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
