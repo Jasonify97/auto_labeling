@@ -6,8 +6,8 @@ def upload(request):
     return render(request, "project/upload.html")
 
 def annotate(request):
-    
-    return render(request, "project/annotate.html")
+    img_lists = UploadImg.objects.all()
+    return render(request, "project/annotate.html", {'img_lists': img_lists})
 
 def classes(request):
     

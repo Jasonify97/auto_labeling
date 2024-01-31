@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'project/css/upload.css' %}" />
+    <link rel="stylesheet" href="{% static 'project/css/show_upload_img.css' %}" />
 </head>
 <body>
     <header>
@@ -58,11 +58,9 @@
         </div>
         <div class="main">
             <div class="show_upload_img">
-                <div class="table">
-                    {% for img in img_lists %}
-                        <img src="..{{ img.image.url }}">
-                    {% endfor %}
-                </div> 
+                {% for img in img_lists %}
+                    <img class="image" src="..{{ img.image.url }}">
+                {% endfor %}
             </div>
         </div>
     </div>

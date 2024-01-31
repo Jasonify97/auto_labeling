@@ -1,12 +1,111 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project/css/annotate.css' %}" />
 </head>
 <body>
-    <h1>here is login pages!</h1>
-    
+    <header>
+        <div class="header_left_content">
+            <a href="http://127.0.0.1:8000/project/upload/">
+                <img src="{% static 'project/img/icon.png' %}" alt="">
+            </a>
+            <a class="page_name" href="http://127.0.0.1:8000/user/main">Autolabel</a>
+        </div> 
+        <div class="header_center">
+                <a class="header_center_content" href="/">project</a>
+                <a class="header_center_content" href="/"><p>Documentation</p></a>
+        </div>
+        <div class="header_right_content">
+            <button>
+                <span>mysite</span>
+            </button>                        
+        </div>
+    </header>
+    <div class="container">
+        <div class="leftbar">
+            <div class="user_name">
+                user_name
+            </div>
+            <div class = "project_first_img">
+                <img class="first_img" src="{% static 'project/img/1.jpg' %}" alt="">
+            </div>
+            <div class="project_intro">
+                <div class="project_intro_name">
+                    hi
+                </div>
+                <div class="project_intro_modify">
+                    :
+                </div>
+            </div>
+            <div class="project_move_page">
+                <button class="move_page_btn_other_page" type="button" onclick=" location.href='http://127.0.0.1:8000/project/upload/' ">
+                    Upload
+                </button>
+                <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/create_classes/'">
+                    Classes
+                </button>
+                <button class="move_page_btn_current_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/annotate/'">
+                    Annotate 
+                </button>
+                <button class="move_page_btn_other_page" type="button" onclick="location.href='http://127.0.0.1:8000/project/generate/'">
+                    Generate
+                </button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container_tab">
+                <ul class="tabs">
+                    <li class="tab-link current" data-tab="tab-1" onclick="changeTab('tab-1')">Unannotated</li>
+                    <li class="tab-link" data-tab="tab-2" onclick="changeTab('tab-2')">annotated</li>
+                </ul>
+            
+                <div id="tab-1" class="tab-content current">
+                    {% for img in img_lists %}
+                        <img class="image" src="..{{ img.image.url }}">
+                    {% endfor %}
+                </div>
+                <div id="tab-2" class="tab-content">
+                    {% for img in img_lists %}
+                        <img class="image" src="..{{ img.image.url }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script>
+    function changeTab(tabId) {
+        // 모든 탭 콘텐츠를 숨김
+        var tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(function(content) {
+            content.classList.remove('current');
+        });
+
+        // 클릭된 탭에 해당하는 콘텐츠를 표시
+        var selectedTabContent = document.getElementById(tabId);
+        selectedTabContent.classList.add('current');
+
+        // li 클릭시 div 내부 current 제거
+        var tabLinks = document.querySelectorAll('.tab-link');
+        tabLinks.forEach(function(link) {
+            link.classList.remove('current');
+        });
+
+        // 클릭된 탭에 active 클래스 추가
+        var selectedTabLink = document.querySelector('[data-tab="' + tabId + '"]');
+        selectedTabLink.classList.add('current');
+    }
+</script>
+
 </body>
 </html>
