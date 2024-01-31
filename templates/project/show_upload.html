@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'project/css/show_upload.css' %}" />
+    <link rel="stylesheet" href="{% static 'project/css/upload.css' %}" />
 </head>
 <body>
     <header>
@@ -57,23 +57,9 @@
             </div>
         </div>
         <div class="main">
-            <div class="file_upload">
-                <img src="{% static 'project/img/upload.png' %}" alt="">
-                <p>Drag and Drop images and annotationsto Upload them.</p>
-                <p style="color: black;">or</p>
-                <div class="upload_file_btn">
-                    <button class="select_btn" id="select_btn_left"  type="button" onclick="">
-                        Select Files
-                    </button>
-                    <form action="{% url 'upload_img' %}" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <input class="select_btn" type="file" name='imgfile' multiple>
-                        <input type="submit">
-                    </form>
-                    <button class="select_btn" type="button">
-                        Select Folder
-                    </button>
-                </div>
+            <div class="show_upload_img">
+
+
             </div>
         </div>
     </div>

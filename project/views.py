@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import *
-from django.shortcuts import get_object_or_404
 
 def upload(request):
     
@@ -36,3 +35,17 @@ def create_classes(request):
 def show_classes(request):
     classes_lists = Classes.objects.all()
     return render(request, 'project/show_classes.html', {'classes_lists': classes_lists})
+
+
+def upload_img(request):
+    if request.method == "POST":
+        img_list = request.FILES.getlist('imgfile')
+        
+        user_profile = UserProfile.objects.get(user_name=request.user)
+
+        for img in img_list:
+            upload = UploadImg(image = img, project_name = user_profile )
+            upload.save()
+
+        return redirect("http://127.0.0.1:8000/project/show_upload/")
+    return render(request, "project/upload.html")
