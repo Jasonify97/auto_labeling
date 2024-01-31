@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from django.shortcuts import get_object_or_404
 
 def upload(request):
     
@@ -21,11 +22,13 @@ def generate(request):
 def create_classes(request):
     if request.method == "POST":
         input_classes = request.POST.get('input_classes', '')
-        
         input_classes = input_classes.replace(" ","").split(',')
 
+        user_profile = UserProfile.objects.get(user_name=request.user)
+
         for name in input_classes:
-            class_instance, created = Classes.objects.get_or_create(classes_instance=name)
+            classes_instance = Classes(project_name=user_profile, classes_instance=name)
+            classes_instance.save()
         
         return redirect('show_classes')
     return render(request, 'project/create_classes.html')
