@@ -12,6 +12,7 @@ urlpatterns = [
     path("show_upload_img/", views.show_upload_img, name="show_upload_img"),
     
     path("annotate/", views.annotate),
+    path("annotate/annotating/", views.annotating),
 
     path("classes/", views.classes),
     path("create_classes/", views.create_classes, name='create_classes'),
